@@ -1,0 +1,793 @@
+:root{
+    --bg:#0F172A;
+    --card:#1E293B;
+    --border:#334155;
+    --primary:#8B5CF6;
+    --text:#F8FAFC;
+    --text-secondary:#CBD5E1;
+}
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Whole App */
+html, body, [data-testid="stAppViewContainer"] {
+    background-color: #0F172A;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Main Content */
+[data-testid="stAppViewContainer"] {
+    background-color: #0F172A;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #111827;
+}
+
+/* Hide Streamlit menu */
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
+
+/* ==========================
+   BUTTON STYLING
+========================== */
+
+/* Link Buttons */
+
+div.stLinkButton>a{
+
+    border-radius:12px;
+
+    font-weight:600;
+}
+
+div.stLinkButton>a:hover{
+
+    transform:translateY(-3px);
+}
+/* Resume Download Button */
+
+div.stDownloadButton > button{
+
+    width:100%;
+
+    background:linear-gradient(90deg,#7C3AED,#9333EA);
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+div.stDownloadButton > button:hover{
+
+    transform:translateY(-3px);
+
+    background:linear-gradient(90deg,#9333EA,#7C3AED);
+}
+/* Hero Gradient */
+
+/* Premium Background */
+
+[data-testid="stAppViewContainer"]{
+
+    background:
+        radial-gradient(circle at 10% 15%, rgba(168,85,247,.16), transparent 28%),
+
+        radial-gradient(circle at 90% 80%, rgba(6,182,212,.12), transparent 28%),
+
+        #0F172A;
+
+    background-attachment:fixed;
+}
+/* ==========================
+      PREMIUM METRIC CARDS
+========================== */
+
+.metric-card{
+
+    background:linear-gradient(145deg,#1E293B,#111827);
+
+    border:1px solid rgba(139,92,246,.25);
+    margin-bottom:25px;
+    border-radius:22px;
+
+    padding:28px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+.metric-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#A855F7;
+
+    box-shadow:
+        0 20px 45px rgba(139,92,246,.30);
+}
+
+.metric-icon{
+
+    font-size:34px;
+
+    margin-bottom:12px;
+}
+
+.metric-value{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#A855F7;
+
+    margin-bottom:6px;
+}
+
+.metric-title{
+
+    color:#CBD5E1;
+
+    font-size:17px;
+
+    font-weight:500;
+}
+
+/* ==========================
+   ABOUT SECTION
+========================== */
+
+/* Info Cards (st.info & st.success) */
+
+div[data-testid="stAlert"]{
+
+    border-radius:15px;
+
+    transition:0.3s;
+
+    border:none;
+}
+
+/* Hover Effect */
+
+div[data-testid="stAlert"]:hover{
+
+    transform:translateY(-5px);
+
+    border:1px solid #8B5CF6 !important;
+
+    box-shadow:0px 10px 25px rgba(139,92,246,0.35);
+}
+
+/* Heading */
+
+h1,h2,h3{
+
+    color:#F8FAFC;
+}
+
+/* Paragraph */
+
+p{
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+}
+
+/* Skills Progress */
+
+div[data-testid="stProgressBar"]{
+
+    margin-top:-5px;
+
+    margin-bottom:18px;
+}
+
+/* Skills Category */
+
+h2{
+
+    letter-spacing:0.5px;
+}
+/* Project Buttons */
+
+div.stLinkButton>a{
+
+    border-radius:12px !important;
+
+    font-weight:600 !important;
+
+    transition:0.3s !important;
+}
+
+div.stLinkButton>a:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0px 8px 18px rgba(139,92,246,0.35);
+}
+/* Certificate Images */
+
+div[data-testid="stImage"] img{
+
+    border-radius:16px;
+
+    transition:0.3s;
+}
+
+div[data-testid="stImage"] img:hover{
+
+    transform:scale(1.02);
+}
+
+/* Main Container */
+
+.block-container{
+
+    max-width:1200px;
+
+    padding-top:2rem;
+
+    padding-bottom:2rem;
+}
+/* Smooth Animation */
+
+*{
+
+    transition:0.3s ease;
+}
+/* ===========================
+   BUTTONS
+=========================== */
+
+.stButton > button,
+.stLinkButton > a,
+.stDownloadButton > button{
+
+    border-radius:14px !important;
+
+    font-weight:600 !important;
+
+    transition:all 0.3s ease !important;
+
+    border:none !important;
+
+    background:linear-gradient(90deg,#7C3AED,#8B5CF6) !important;
+
+    color:white !important;
+}
+
+.stButton > button:hover,
+.stLinkButton > a:hover,
+.stDownloadButton > button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0px 10px 25px rgba(139,92,246,0.35) !important;
+}
+/* Premium Card */
+
+
+
+
+.premium-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0px 12px 28px rgba(139,92,246,0.30);
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0F172A;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#8B5CF6;
+
+    border-radius:10px;
+}
+/* Images */
+
+.stImage img{
+
+    width:260px !important;
+
+    border-radius:22px !important;
+
+    border:2px solid rgba(168,85,247,.35);
+
+    box-shadow:
+        0 0 25px rgba(168,85,247,.35),
+        0 0 60px rgba(168,85,247,.18),
+        0 15px 35px rgba(0,0,0,.35);
+
+    display:block;
+
+    margin:auto;
+}
+
+.stImage img:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:
+        0 0 35px rgba(168,85,247,.55),
+        0 0 80px rgba(168,85,247,.30),
+        0 18px 40px rgba(0,0,0,.40);
+}
+
+
+div[data-testid="stHorizontalBlock"]{
+    border-radius:18px;
+}
+
+[data-testid="stAppViewContainer"]{
+    background:
+    radial-gradient(circle at 15% 10%, rgba(168,85,247,.18), transparent 30%),
+    radial-gradient(circle at 85% 80%, rgba(6,182,212,.14), transparent 30%),
+    #0F172A;
+}
+
+/* ==========================
+      FADE ANIMATION
+========================== */
+
+.fade-up{
+
+    animation:fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+}
+/* ==========================
+      PROJECT CARD
+========================== */
+
+.project-card{
+
+    background:linear-gradient(145deg,#1E293B,#111827);
+
+    border:1px solid rgba(139,92,246,.18);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    margin-bottom:30px;
+
+    transition:all .35s ease;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.25);
+}
+
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#A855F7;
+
+    box-shadow:
+        0 20px 40px rgba(139,92,246,.25);
+}
+
+.project-image img,
+.stImage img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    transition:.35s ease;
+}
+
+.project-image img:hover,
+
+/* ==========================
+      TECHNOLOGY BADGES
+========================== */
+
+.tech-badge{
+
+    display:inline-block;
+
+    margin-right:10px;
+
+    margin-bottom:10px;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:linear-gradient(90deg,#7C3AED,#A855F7);
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:.0.3s;
+}
+
+.tech-badge:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(139,92,246,.40);
+}
+
+/* ==========================
+      ACHIEVEMENT TIMELINE
+========================== */
+
+.timeline-item{
+
+    position:relative;
+
+    background:linear-gradient(145deg,#1E293B,#111827);
+
+    border-left:4px solid #8B5CF6;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    margin-bottom:22px;
+
+    margin-left:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.35s;
+}
+
+.timeline-item:hover{
+
+    transform:translateX(8px);
+
+    box-shadow:0 15px 35px rgba(139,92,246,.25);
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-14px;
+
+    top:28px;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:#A855F7;
+
+    border:4px solid #0F172A;
+}
+
+.timeline-title{
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:700;
+}
+
+.timeline-org{
+
+    color:#A855F7;
+
+    font-weight:600;
+
+    margin-top:4px;
+}
+
+.timeline-desc{
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+
+    margin-top:12px;
+}
+
+/* ==========================
+      CERTIFICATE GALLERY
+========================== */
+
+.certificate-gallery{
+
+    display:flex;
+
+    gap:25px;
+
+    overflow-x:auto;
+
+    overflow-y:hidden;
+
+    scroll-behavior:smooth;
+
+    padding:10px 5px 20px;
+}
+
+.certificate-gallery::-webkit-scrollbar{
+
+    height:10px;
+}
+
+.certificate-gallery::-webkit-scrollbar-track{
+
+    background:#1E293B;
+
+    border-radius:20px;
+}
+
+.certificate-gallery::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(90deg,#7C3AED,#A855F7);
+
+    border-radius:20px;
+}
+
+.certificate-gallery::-webkit-scrollbar-thumb:hover{
+
+    background:#9333EA;
+}
+
+.certificate-card{
+
+    min-width:330px;
+
+    max-width:330px;
+
+    flex-shrink:0;
+
+    background:linear-gradient(145deg,#1E293B,#111827);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(139,92,246,.20);
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.30);
+}
+
+.certificate-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#A855F7;
+
+    box-shadow:0 18px 40px rgba(139,92,246,.28);
+}
+
+.certificate-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.certificate-content{
+
+    padding:18px;
+}
+
+.certificate-title{
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+}
+
+.certificate-org{
+
+    color:#CBD5E1;
+
+    font-size:15px;
+}
+
+
+/* ==========================
+        PREMIUM FOOTER
+========================== */
+
+.footer{
+
+    margin-top:70px;
+
+    padding:40px 20px;
+
+    text-align:center;
+}
+
+.footer-line{
+
+    width:100%;
+
+    height:2px;
+
+    margin-bottom:35px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #8B5CF6,
+        #A855F7,
+        transparent
+    );
+}
+
+.footer h4{
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:12px;
+}
+
+.footer p{
+
+    color:#94A3B8;
+
+    margin:6px 0;
+
+    font-size:15px;
+}
+/* ==========================
+      CONTACT SECTION
+========================== */
+
+.contact-card{
+    margin-bottom:25px;
+
+    background:linear-gradient(145deg,#1E293B,#111827);
+
+    border:1px solid rgba(139,92,246,.20);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.30);
+
+    transition:.35s;
+
+    height:100%;
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#A855F7;
+
+    box-shadow:0 18px 40px rgba(139,92,246,.30);
+}
+
+.contact-card h3{
+
+    color:white;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+}
+
+.contact-card p{
+
+    color:#CBD5E1;
+
+    margin:0;
+}
+
+.contact-card a{
+
+    color:#A855F7;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+.contact-card a:hover{
+
+    color:white;
+}
+/* ==========================
+      ADMIN INPUT FIX
+========================== */
+
+/* Input Text */
+.stTextInput input,
+.stTextArea textarea,
+.stNumberInput input {
+    color: #111827 !important;
+    caret-color: #111827 !important;
+}
+
+/* Placeholder */
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder {
+    color: #6B7280 !important;
+}
+
+/* Selectbox */
+.stSelectbox div[data-baseweb="select"] {
+    color: #111827 !important;
+}
+
+/* Multiselect */
+.stMultiSelect div[data-baseweb="select"] {
+    color: #111827 !important;
+}
