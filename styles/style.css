@@ -36,9 +36,11 @@ footer {
     visibility: hidden;
 }
 
-/*header {
-    visibility: hidden;
-}*/
+header[data-testid="stHeader"]{
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
 
 /* ==========================
    BUTTON STYLING

@@ -8,6 +8,7 @@ from admin.profile import profile_page
 from admin.messages import messages_page
 from database.profile_db import get_dashboard_stats
 from admin.setting import settings_page
+from admin.about import about_page
 def dashboard():
     visitor_count = get_visitor_count()
     st.title("📊 Admin Panel")
@@ -95,7 +96,6 @@ def dashboard():
 
         profile_page()
     elif menu == "📝 About":
-
         about_page()
 
     elif menu == "📨 Messages":
