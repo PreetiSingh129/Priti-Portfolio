@@ -1,11 +1,13 @@
 import streamlit as st
 from database.connection import get_connection
-from database.skills_db import get_all_skills
-from database.skills_db import delete_skill
+from database.skills_db import get_all_skills, delete_skill
+
+# Initialize Session State
 if "skill_edit_id" not in st.session_state:
-    st.session_state.skill_edit_id = None
+    st.session_state["skill_edit_id"] = None
+
 if "show_skill_form" not in st.session_state:
-    st.session_state.show_skill_form = False
+    st.session_state["show_skill_form"] = False
 def skills_page():
 
     st.title("🛠 Skills Management")
@@ -138,7 +140,7 @@ def show_skills():
                     key=f"edit_skill_{skill['id']}"
                 ):
 
-                    st.session_state.skill_edit_id = skill["id"]
+                    st.session_state["skill_edit_id"] = skill["id"]
                     st.rerun()
 
             with col2:
@@ -154,8 +156,7 @@ def show_skills():
 
                     st.rerun()
 
-            if st.session_state.skill_edit_id == skill["id"]:
-
+            if st.session_state.get("skill_edit_id") == skill["id"]:
                 edit_skill_form(skill)
 def edit_skill_form(skill):
 
@@ -251,12 +252,12 @@ def edit_skill_form(skill):
 
         st.success("✅ Skill Updated Successfully")
 
-        st.session_state.skill_edit_id = None
+        st.session_state["skill_edit_id"] = None
 
         st.rerun()
 
     if cancel:
 
-        st.session_state.skill_edit_id = None
+        st.session_state["skill_edit_id"] = None
 
         st.rerun()
