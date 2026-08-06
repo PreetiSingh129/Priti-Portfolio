@@ -6,10 +6,10 @@ from database.achievements_db import (
 )
 
 if "achievement_edit_id" not in st.session_state:
-    st.session_state.achievement_edit_id = None
+    st.session_state["achievement_edit_id"] = None
 
 if "show_achievement_form" not in st.session_state:
-    st.session_state.show_achievement_form = False
+    st.session_state["show_achievement_form"] = False
 
 
 def achievements_page():
@@ -20,11 +20,11 @@ def achievements_page():
         "➕ Add Achievement",
         use_container_width=True
     ):
-        st.session_state.show_achievement_form = (
-            not st.session_state.show_achievement_form
-        )
+        st.session_state["show_achievement_form"] = (
+            not st.session_state.get("show_achievement_form", False)
+)
 
-    if st.session_state.show_achievement_form:
+    if st.session_state.get("show_achievement_form", False):
         add_achievement_form()
 
     st.divider()
@@ -79,7 +79,7 @@ def add_achievement_form():
 
         st.success("Achievement Added Successfully 🎉")
 
-        st.session_state.show_achievement_form = False
+        st.session_state["show_achievement_form"] = False
 
         st.rerun()
 def show_achievements():
@@ -118,7 +118,7 @@ def show_achievements():
                     key=f"edit_achievement_{achievement['id']}"
                 ):
 
-                    st.session_state.achievement_edit_id = achievement["id"]
+                    st.session_state["achievement_edit_id"] = achievement["id"]
 
                     st.rerun()
 
@@ -213,12 +213,12 @@ def edit_achievement_form(achievement):
 
         st.success("Achievement Updated Successfully 🎉")
 
-        st.session_state.achievement_edit_id = None
+        st.session_state.get("achievement_edit_id") = None
 
         st.rerun()
 
     if cancel:
 
-        st.session_state.achievement_edit_id = None
+        st.session_state.get("achievement_edit_id") = None
 
         st.rerun()
