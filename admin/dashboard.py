@@ -8,10 +8,8 @@ from admin.profile import profile_page
 from admin.messages import messages_page
 from database.profile_db import get_dashboard_stats
 from admin.setting import settings_page
-from admin.about import about_page
-visitor_count = get_visitor_count()
 def dashboard():
-
+    visitor_count = get_visitor_count()
     st.title("📊 Admin Panel")
    
     stats = get_dashboard_stats()
@@ -57,7 +55,8 @@ def dashboard():
    
 
     st.divider()
-  
+    st.sidebar.title("🧪 TEST SIDEBAR")
+    st.sidebar.write("Hello Priya")
     menu = st.sidebar.radio(
 
         "Portfolio Manager",
