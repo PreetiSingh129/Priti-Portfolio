@@ -290,7 +290,7 @@ def show_projects():
                             value=project.get("demo") or ""
                         )
 
-                        image_path = st.file_uploader(
+                        image_file = st.file_uploader(
     "Upload Image",
     type=["jpg", "jpeg", "png", "webp"]
 )
@@ -298,6 +298,23 @@ def show_projects():
                         update = st.form_submit_button("💾 Update")
 
                         if update:
+
+                            new_image_path = project["image"]
+
+                            if image_file is not None:
+
+                                if not os.path.exists("assets/images"):
+                                    os.makedirs("assets/images")
+
+                                extension = image_file.name.split(".")[-1]
+                                filename = f"{uuid.uuid4()}.{extension}"
+
+                                new_image_path = os.path.abspath(
+                                    os.path.join("assets/images", filename)
+                                )
+
+                                with open(new_image_path, "wb") as f:
+                                    f.write(image_file.getbuffer())
 
                             try:
 
@@ -324,7 +341,7 @@ def show_projects():
                                     highlights,
                                     github,
                                     demo,
-                                    image_path,
+                                    new_image_path,
                                     project["id"]
                                 )
 

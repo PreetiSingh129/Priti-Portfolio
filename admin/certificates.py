@@ -6,7 +6,8 @@ from database.certificate_db import (
     get_all_certificates,
     delete_certificate
 )
-
+if "certificate_edit_id" not in st.session_state:
+    st.session_state["certificate_edit_id"] = None
 def certificates_page():
 
     st.title("🏆 Certificate Management")
@@ -49,7 +50,7 @@ def add_certificate_form():
 
         if image is not None:
 
-            os.makedirs("assets/images", exist_ok=True)
+            os.makedirs("assets/certificates", exist_ok=True)
 
             extension = image.name.split(".")[-1]
 
@@ -191,10 +192,7 @@ def edit_certificate_form(certificate):
             type=["png","jpg","jpeg"],
             key=f"edit_cert_{certificate['id']}"
         )
-        image_path = st.file_uploader(
-    "Upload Certificate Image",
-    type=["png", "jpg", "jpeg", "webp"]
-)
+        
 
         col1, col2 = st.columns(2)
 
