@@ -83,7 +83,7 @@ def add_skill_form():
 
             cursor.execute(query, values)
             conn.commit()
-
+            st.cache_data.clear()
             st.success("✅ Skill Added Successfully")
 
             st.session_state.show_skill_form = False
@@ -151,7 +151,7 @@ def show_skills():
                 ):
 
                     delete_skill(skill["id"])
-
+                    st.cache_data.clear()
                     st.success("✅ Skill Deleted")
 
                     st.rerun()
@@ -246,7 +246,7 @@ def edit_skill_form(skill):
         )
 
         conn.commit()
-
+        st.cache_data.clear()
         cursor.close()
         conn.close()
 

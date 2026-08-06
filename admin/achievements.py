@@ -73,7 +73,7 @@ def add_achievement_form():
         )
 
         conn.commit()
-
+        st.cache_data.clear()
         cursor.close()
         conn.close()
 
@@ -206,7 +206,7 @@ def edit_achievement_form(achievement):
         )
 
         conn.commit()
-
+        st.cache_data.clear()
         cursor.close()
 
         conn.close()

@@ -154,7 +154,7 @@ Prediction"""
         )
 
         conn.commit()
-
+        st.cache_data.clear()
         cursor.close()
 
         conn.close()
@@ -240,7 +240,7 @@ def show_projects():
                         )
 
                         conn.commit()
-
+                        st.cache_data.clear()
                         st.success("✅ Project Deleted Successfully")
 
                         st.rerun()
@@ -347,7 +347,7 @@ def show_projects():
 
                                 cursor.execute(query, values)
                                 conn.commit()
-
+                                st.cache_data.clear()
                                 st.success("✅ Project Updated Successfully")
 
                                 st.session_state.edit_id = None

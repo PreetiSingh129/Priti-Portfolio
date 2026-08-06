@@ -1,5 +1,6 @@
 from database.connection import get_connection
-
+import streamlit as st
+@st.cache_data(ttl=60)
 
 def get_all_achievements():
 

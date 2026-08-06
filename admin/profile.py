@@ -172,7 +172,7 @@ def profile_page():
 )
 
         conn.commit()
-
+        st.cache_data.clear()
         cursor.close()
 
         conn.close()

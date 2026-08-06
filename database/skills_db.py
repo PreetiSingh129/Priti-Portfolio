@@ -1,5 +1,6 @@
+import streamlit as st
 from database.connection import get_connection
-
+@st.cache_data(ttl=60)
 
 def get_all_skills():
 
@@ -28,6 +29,5 @@ def delete_skill(id):
     )
 
     conn.commit()
-
     cursor.close()
     conn.close()

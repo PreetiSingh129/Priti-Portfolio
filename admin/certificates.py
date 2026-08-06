@@ -95,7 +95,7 @@ def add_certificate_form():
                 cursor.execute(query, values)
 
                 conn.commit()
-
+                st.cache_data.clear()
                 st.success("✅ Certificate Added Successfully")
 
                 st.session_state.show_certificate_form = False
@@ -207,14 +207,14 @@ def edit_certificate_form(certificate):
 
         if new_image is not None:
 
-            os.makedirs("assets/images", exist_ok=True)
+            os.makedirs("assets/certificates", exist_ok=True)
 
             extension = new_image.name.split(".")[-1]
 
             filename = f"{uuid.uuid4()}.{extension}"
 
             image_path = os.path.join(
-                "assets/images",
+                "assets/certificates",
                 filename
             )
 
@@ -245,7 +245,7 @@ def edit_certificate_form(certificate):
         )
 
         conn.commit()
-
+        st.cache_data.clear()
         cursor.close()
         conn.close()
 

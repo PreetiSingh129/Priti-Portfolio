@@ -1,6 +1,7 @@
 from database.connection import get_connection
 import os
-
+import streamlit as st
+@st.cache_data(ttl=60)
 
 def get_all_certificates():
 
