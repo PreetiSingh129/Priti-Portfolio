@@ -52,11 +52,8 @@ def dashboard():
         "👁 Visitors",
         visitor_count
     )
-   
-
     st.divider()
-    st.sidebar.title("🧪 TEST SIDEBAR")
-    st.sidebar.write("Hello Priya")
+    
     menu = st.sidebar.radio(
 
         "Portfolio Manager",
