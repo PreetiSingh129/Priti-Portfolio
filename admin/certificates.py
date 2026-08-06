@@ -191,10 +191,10 @@ def edit_certificate_form(certificate):
             type=["png","jpg","jpeg"],
             key=f"edit_cert_{certificate['id']}"
         )
-        image = st.text_input(
-            "Image Path",
-            value=certificate.get("image") or ""
-        )
+        image_path = st.file_uploader(
+    "Upload Certificate Image",
+    type=["png", "jpg", "jpeg", "webp"]
+)
 
         col1, col2 = st.columns(2)
 

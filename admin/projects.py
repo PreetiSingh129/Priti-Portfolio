@@ -290,10 +290,10 @@ def show_projects():
                             value=project.get("demo") or ""
                         )
 
-                        image_path = st.text_input(
-                            "Image",
-                            value=project.get("image") or ""
-                        )
+                        image_path = st.file_uploader(
+    "Upload Image",
+    type=["jpg", "jpeg", "png", "webp"]
+)
 
                         update = st.form_submit_button("💾 Update")
 
