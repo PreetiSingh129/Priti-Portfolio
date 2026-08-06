@@ -213,12 +213,12 @@ def edit_achievement_form(achievement):
 
         st.success("Achievement Updated Successfully 🎉")
 
-        st.session_state.get("achievement_edit_id") = None
+        st.session_state["achievement_edit_id"] = None
 
         st.rerun()
 
     if cancel:
 
-        st.session_state.get("achievement_edit_id") = None
+        st.session_state["achievement_edit_id"] = None
 
         st.rerun()
